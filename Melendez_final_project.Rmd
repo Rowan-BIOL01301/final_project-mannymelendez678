@@ -32,17 +32,26 @@ dplyr::glimpse(raw_df)
 
 ## Question 1
 
-#### Is there a positive correlation between seed number and wins during regular season? Your question should literally be a level-4 header.
+#### Do 5th seeded players have more losses than 3rd seeded players during the regular season? Your question should literally be a level-4 header.
 
 ### Methods
 ```{r read-examine-data}
-
-
+raw_df%>%#use this data set
+  rename(reg_loss=`Reg. L`)%>%#rename column so its easier to work with
+  filter(Seed%in% c("3","5"))%>%#only show 3rd and 5th seed
+  ggplot()+#create ggplot with new data set made above
+  aes(x=Seed,
+      y=reg_loss,
+      fill=Seed)+#define x/y axis
+  geom_col()+#create bar plot
+  labs(y="Regular Season Loses")+#change y axis name
+  theme(legend.position = "none")#remove legend, not needed
+  
 ```
 
 ### Answer
 
-Replace this text with your answer to your question.
+The answer is yes. 5th seeded teams have more losses than 3rd seeded teams. The graph shows 5th seeded teams have about 1,000 loses, while the 3rd season teams have about 850 loses. 
 
 
 <br><br>
