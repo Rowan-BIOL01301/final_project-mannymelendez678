@@ -114,7 +114,10 @@ The answer to this question is yes, Stanford has more regular season wins from 1
 
 ### Methods
 ```{r Question 4}
-
+raw_df%>%#use this data set
+  rename(home_away=`1st game at home?`)%>%#rename column to make it easier to work with
+rename(tourn_win=`Tourney W`)#rename column to make it easier to work with
+  
 
 ```
 
