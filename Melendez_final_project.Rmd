@@ -78,7 +78,7 @@ filter(Seed%in% c("1","2"))%>%#only show 1st and 3rd seed
 
 ### Answer
 
-The answer is yes, first seeded teams have a higher average of tournament games won when compared to second seeded teams. This result is as expected since one would expect a first seeded team to be better than a second seeded team on average.
+The answer is yes, first seeded teams have a higher average of tournament games won when compared to second seeded teams. This result is as expected since one would expect a first seeded team to be better than a second seeded team on average. The average wins for first seeded teams is about 2.5, where the average for second seeded teams is about 2 tournament wins.
 
 <br><br>
 
