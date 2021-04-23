@@ -2,16 +2,20 @@
 title: "Final Project"
 subtitle: "Data Science for Biologists, Spring 2021"
 author: "Your name goes here"
-output: html_document
+output:
+  html_document:
+    theme: cerulean
+    highlight: kate
 editor_options: 
   chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
 # DON'T CHANGE THE NEXT LINE, except to add NEW options if you have any.
-knitr::opts_chunk$set(warning=FALSE, message=FALSE, echo = TRUE, include = TRUE)
+knitr::opts_chunk$set(warning=FALSE, message=FALSE, echo = TRUE, include = TRUE,fig.width=6,fig.height=4)
 
 # Load all libraries you use HERE:
+library(tidyverse)
 ```
 
 <br><br>
@@ -19,16 +23,22 @@ knitr::opts_chunk$set(warning=FALSE, message=FALSE, echo = TRUE, include = TRUE)
 ## Introduction
 
 ```{r read-examine-data}
+raw_df <- read_csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/ncaa-womens-basketball-tournament/ncaa-womens-basketball-tournament-history.csv")
 
+dplyr::glimpse(raw_df)
 ```
 
 <br><br>
 
 ## Question 1
 
-#### REPLACE TEXT WITH YOUR QUESTION. Your question should literally be a level-4 header.
+#### Is there a positive correlation between seed number and wins during regular season? Your question should literally be a level-4 header.
 
 ### Methods
+```{r read-examine-data}
+
+
+```
 
 ### Answer
 
@@ -39,9 +49,13 @@ Replace this text with your answer to your question.
 
 ## Question 2
 
-#### REPLACE TEXT WITH YOUR QUESTION. Your question should literally be a level-4 header.
+#### Do 1st seeded teams have a higher average of tournament wins than 3rd seeded teams? Your question should literally be a level-4 header.
 
 ### Methods
+```{r read-examine-data}
+
+
+```
 
 ### Answer
 
@@ -51,9 +65,13 @@ Replace this text with your answer to your question.
 
 ## Question 3
 
-#### REPLACE TEXT WITH YOUR QUESTION. Your question should literally be a level-4 header.
+#### Does stanford have more regular season wins than UCLA from 1982-2018? Your question should literally be a level-4 header.
 
 ### Methods
+```{r read-examine-data}
+
+
+```
 
 ### Answer
 
@@ -64,9 +82,13 @@ Replace this text with your answer to your question.
 
 ## Question 4
 
-#### REPLACE TEXT WITH YOUR QUESTION. Your question should literally be a level-4 header.
+#### Does an at home first game equate to a higher amount of tournament games won overall? Your question should literally be a level-4 header.
 
 ### Methods
+```{r read-examine-data}
+
+
+```
 
 ### Answer
 
