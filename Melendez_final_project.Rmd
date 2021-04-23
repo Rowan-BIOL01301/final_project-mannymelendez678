@@ -26,6 +26,7 @@ library(tidyverse)
 raw_df <- read_csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/ncaa-womens-basketball-tournament/ncaa-womens-basketball-tournament-history.csv")
 
 dplyr::glimpse(raw_df)
+
 ```
 
 <br><br>
@@ -88,13 +89,21 @@ The answer is yes, first seeded teams have a higher average of tournament games 
 
 ### Methods
 ```{r Question 3}
-
-
+raw_df%>%#use this data set
+  rename(reg_win=`Reg. W`)%>%#change name to make it easier to work with
+  filter(School %in% c("Stanford","UCLA"))%>%#only show stanford and UCLA colleges
+  ggplot()+#create ggplot using new data set created above
+   aes(x=School,
+       y=reg_win,
+       fill=School)+#define x/y variables and add fill
+  geom_col()+#create bar graph
+  labs(y="Regular Season Wins")+#rename y axis
+  theme(legend.position = "none")#remove legend, not needed
 ```
 
 ### Answer
 
-Replace this text with your answer to your question.
+The answer to this question is yes, Stanford has more regular season wins from 1982-2018 when compared to UCLA. Stanford has about 850 wins and UCLA only has about 325 wins. Go Stanford! 
 
 
 <br><br>
