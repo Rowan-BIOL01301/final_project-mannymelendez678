@@ -385,6 +385,26 @@ summary {
 </div>
 <div id="methods-3" class="section level3">
 <h3>Methods</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>raw_df<span class="sc">%&gt;%</span><span class="co">#use this data set</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">home_away=</span><span class="st">`</span><span class="at">1st game at home?</span><span class="st">`</span>)<span class="sc">%&gt;%</span><span class="co">#rename column to make it easier to work with</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rename</span>(<span class="at">tourn_win=</span><span class="st">`</span><span class="at">Tourney W</span><span class="st">`</span>)<span class="co">#rename column to make it easier to work with</span></span></code></pre></div>
+<pre><code>## # A tibble: 2,092 x 19
+##     Year School Seed  Conference `Conf. W` `Conf. L` `Conf. %` `Conf. place`
+##    &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;        
+##  1  1982 Arizo… 4     Western C… -         -         -         -            
+##  2  1982 Auburn 7     Southeast… -         -         -         -            
+##  3  1982 Cheyn… 2     Independe… -         -         -         -            
+##  4  1982 Clems… 5     Atlantic … 6         3         66.7      4th          
+##  5  1982 Drake  4     Missouri … -         -         -         -            
+##  6  1982 East … 6     Independe… -         -         -         -            
+##  7  1982 Georg… 5     Southeast… -         -         -         -            
+##  8  1982 Howard 8     Mid-Easte… -         -         -         -            
+##  9  1982 Illin… 7     Big Ten    -         -         -         -            
+## 10  1982 Jacks… 7     Southwest… -         -         -         -            
+## # … with 2,082 more rows, and 11 more variables: `Reg. W` &lt;dbl&gt;, `Reg.
+## #   L` &lt;dbl&gt;, `Reg. %` &lt;dbl&gt;, `How qual` &lt;chr&gt;, home_away &lt;chr&gt;,
+## #   tourn_win &lt;dbl&gt;, `Tourney L` &lt;dbl&gt;, `Tourney finish` &lt;chr&gt;, `Full W` &lt;dbl&gt;,
+## #   `Full L` &lt;dbl&gt;, `Full %` &lt;chr&gt;</code></pre>
 </div>
 <div id="answer-3" class="section level3">
 <h3>Answer</h3>
