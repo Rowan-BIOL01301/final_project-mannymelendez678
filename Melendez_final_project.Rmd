@@ -116,11 +116,22 @@ The answer to this question is yes, Stanford has more regular season wins from 1
 ```{r Question 4}
 raw_df%>%#use this data set
   rename(home_away=`1st game at home?`)%>%#rename column to make it easier to work with
-rename(tourn_win=`Tourney W`)#rename column to make it easier to work with
+  rename(tourn_win=`Tourney W`)%>%#rename column to make it easier to work with
+  filter(home_away %in% c("Y","N"))%>%#take out y^ values
+  ggplot()+#create ggplot from data set created above
+  aes(x=home_away,
+      y=tourn_win,
+      fill=home_away)+#define x/y axis and add fill
+  geom_col()+#create bar graph
+    theme(legend.position = "none")+#remove legend, not needed
+  labs(x="Home vs Away", 
+         y="Tournament Wins")#rename x/y axis.
+
+
   
 
 ```
 
 ### Answer
 
-Replace this text with your answer to your question.
+The answer to this question is yes, having a first game at a team's home court equates to a higher amount of tournament games won overall. This indicates home court advantage might be a thing after all! Overall, having a first game at home equates to about 1,250 wins for games played between 1982 to 2018. During this time the games won that weren't on a team's home court was only about 800.
