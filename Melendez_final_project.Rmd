@@ -1,7 +1,7 @@
 ---
 title: "Final Project"
 subtitle: "Data Science for Biologists, Spring 2021"
-author: "Your name goes here"
+author: "Manuel Melendez"
 output:
   html_document:
     theme: cerulean
@@ -32,10 +32,10 @@ dplyr::glimpse(raw_df)
 
 ## Question 1
 
-#### Do 5th seeded players have more losses than 3rd seeded players during the regular season? Your question should literally be a level-4 header.
+#### Do 5th seeded players have more losses than 3rd seeded players during the regular season? 
 
 ### Methods
-```{r read-examine-data}
+```{r Question 1}
 raw_df%>%#use this data set
   rename(reg_loss=`Reg. L`)%>%#rename column so its easier to work with
   filter(Seed%in% c("3","5"))%>%#only show 3rd and 5th seed
@@ -58,26 +58,36 @@ The answer is yes. 5th seeded teams have more losses than 3rd seeded teams. The 
 
 ## Question 2
 
-#### Do 1st seeded teams have a higher average of tournament wins than 3rd seeded teams? Your question should literally be a level-4 header.
+#### Do first seeded teams have a higher average of tournament wins compared to second seeded teams? 
 
 ### Methods
-```{r read-examine-data}
+```{r Question 2}
+raw_df%>%#use this data set
+  rename(tourn_win=`Tourney W`)%>%#change column name to make easier to work with
+filter(Seed%in% c("1","2"))%>%#only show 1st and 3rd seed
+  ggplot()+#create ggplot using data above
+  aes(x=Seed,
+      y=tourn_win,
+      fill=Seed)+#define x/y axis
+  geom_boxplot()+#create boxplot
+  labs(y="Tournament Games Won")+#rename y axis
+  theme(legend.position = "none")#remove legend, not needed
 
 
 ```
 
 ### Answer
 
-Replace this text with your answer to your question.
+The answer is yes, first seeded teams have a higher average of tournament games won when compared to second seeded teams. This result is as expected since one would expect a first seeded team to be better than a second seeded team on average.
 
 <br><br>
 
 ## Question 3
 
-#### Does stanford have more regular season wins than UCLA from 1982-2018? Your question should literally be a level-4 header.
+#### Does stanford have more regular season wins than UCLA from 1982-2018? 
 
 ### Methods
-```{r read-examine-data}
+```{r Question 3}
 
 
 ```
@@ -91,10 +101,10 @@ Replace this text with your answer to your question.
 
 ## Question 4
 
-#### Does an at home first game equate to a higher amount of tournament games won overall? Your question should literally be a level-4 header.
+#### Does an at home first game equate to a higher amount of tournament games won overall? 
 
 ### Methods
-```{r read-examine-data}
+```{r Question 4}
 
 
 ```
