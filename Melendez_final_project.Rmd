@@ -22,7 +22,7 @@ library(tidyverse)
 
 ## Introduction
 
-This data set has data that comes from the NCAA womens basketball tournament. I enjoy basketball and like college basketball even more. I think this data set would be fun to work with and I would be able to understand all the components of this data set.  Here is the link,[basketball](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-10-06/readme.md)
+This data set has data that comes from the NCAA woman's basketball regular season and final tournament during the years between 1982-2018. I enjoy basketball and like college basketball even more. I think this data set would be fun to work with and I would be able to understand all the components of this data set.  Here is the link,[basketball](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-10-06/readme.md)
 
 ```{r read-examine-data}
 raw_df <- read_csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/ncaa-womens-basketball-tournament/ncaa-womens-basketball-tournament-history.csv")
@@ -35,39 +35,39 @@ dplyr::glimpse(raw_df)
 
 ## Question 1
 
-#### Do 5th seeded players have more losses than 3rd seeded players during the regular season? 
+#### Do 5th seeded teams have more losses than 3rd seeded teams during the regular NCAA women's basketball season between 1982-2018? 
 
 ### Methods
-```{r Question 1}
+```{r Question_1}
 raw_df%>%#use this data set
   rename(reg_loss=`Reg. L`)%>%#rename column so its easier to work with
-  filter(Seed%in% c("3","5"))%>%#only show 3rd and 5th seed
+  filter(Seed%in% c("3","5"))%>%#only show 3rd and 5th seed, this function gets rid of other values under the column "Seed" and only shows 3/5 seed
   ggplot()+#create ggplot with new data set made above
   aes(x=Seed,
       y=reg_loss,
       fill=Seed)+#define x/y axis
   geom_col()+#create bar plot
-  labs(y="Regular Season Loses")+#change y axis name
+  labs(y="Regular Season Losses")+#change y axis name
   theme(legend.position = "none")#remove legend, not needed
   
 ```
 
 ### Answer
 
-The answer is yes. 5th seeded teams have more losses than 3rd seeded teams. The graph shows 5th seeded teams have about 1,000 loses, while the 3rd season teams have about 850 loses. 
+The answer is yes. 5th seeded teams have more losses than 3rd seeded teams. The graph shows 5th seeded teams have about 1,000 losses during the regular season from 1982-2018, while the 3rd season teams have about 850 losses in that time period. 
 
 
 <br><br>
 
 ## Question 2
 
-#### Do first seeded teams have a higher average of tournament wins compared to second seeded teams? 
+#### Do first seeded teams have a higher average of tournament wins compared to second seeded teams, during the years 1982-2018? 
 
 ### Methods
-```{r Question 2}
+```{r Question_2}
 raw_df%>%#use this data set
   rename(tourn_win=`Tourney W`)%>%#change column name to make easier to work with
-filter(Seed%in% c("1","2"))%>%#only show 1st and 3rd seed
+filter(Seed%in% c("1","2"))%>%#only show 1st and 3rd seed,this function gets rid of other values under the column "Seed" and only shows 1st/3rd seed
   ggplot()+#create ggplot using data above
   aes(x=Seed,
       y=tourn_win,
@@ -90,10 +90,10 @@ The answer is yes, first seeded teams have a higher average of tournament games 
 #### Does stanford have more regular season wins than UCLA from 1982-2018? 
 
 ### Methods
-```{r Question 3}
+```{r Question_3}
 raw_df%>%#use this data set
   rename(reg_win=`Reg. W`)%>%#change name to make it easier to work with
-  filter(School %in% c("Stanford","UCLA"))%>%#only show stanford and UCLA colleges
+  filter(School %in% c("Stanford","UCLA"))%>%#only show stanford and UCLA colleges, get rid of other colleges in this column
   ggplot()+#create ggplot using new data set created above
    aes(x=School,
        y=reg_win,
@@ -105,17 +105,17 @@ raw_df%>%#use this data set
 
 ### Answer
 
-The answer to this question is yes, Stanford has more regular season wins from 1982-2018 when compared to UCLA. Stanford has about 850 wins and UCLA only has about 325 wins. Go Stanford! 
+The answer to this question is yes, Stanford has more regular season wins from 1982-2018 when compared to UCLA. Stanford has about 850 wins and UCLA only has about 325 wins during this time period. Go Stanford! 
 
 
 <br><br>
 
 ## Question 4
 
-#### Does an at home first game equate to a higher amount of tournament games won overall? 
+#### Does an at home first game relate to a higher amount of tournament games won overall, for the years 1982-2018? 
 
 ### Methods
-```{r Question 4}
+```{r Question_4}
 raw_df%>%#use this data set
   rename(home_away=`1st game at home?`)%>%#rename column to make it easier to work with
   rename(tourn_win=`Tourney W`)%>%#rename column to make it easier to work with
@@ -136,4 +136,4 @@ raw_df%>%#use this data set
 
 ### Answer
 
-The answer to this question is yes, having a first game at a team's home court equates to a higher amount of tournament games won overall. This indicates home court advantage might be a thing after all! Overall, having a first game at home equates to about 1,250 wins for games played between 1982 to 2018. During this time the games won that weren't on a team's home court was only about 800.
+The answer to this question is yes, having a first game at a team's home court relates to a higher amount of tournament games won overall. This indicates home court advantage might be a thing after all! Overall, having a first game at home relates to about 1,250 wins for games played between 1982 to 2018. During this time period, the tournament games won that weren't on a team's home court were only about 800.
