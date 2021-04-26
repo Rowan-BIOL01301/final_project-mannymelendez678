@@ -22,6 +22,8 @@ library(tidyverse)
 
 ## Introduction
 
+This data set has data that comes from the NCAA womens basketball tournament. I enjoy basketball and like college basketball even more. I think this data set would be fun to work with and I would be able to understand all the components of this data set.  Here is the link,[basketball](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-10-06/readme.md)
+
 ```{r read-examine-data}
 raw_df <- read_csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/ncaa-womens-basketball-tournament/ncaa-womens-basketball-tournament-history.csv")
 
